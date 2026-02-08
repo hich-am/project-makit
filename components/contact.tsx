@@ -1,0 +1,137 @@
+"use client"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Send, Mail, ArrowRight } from "lucide-react"
+
+export function Contact() {
+  const [submitted, setSubmitted] = useState(false)
+
+  return (
+    <section id="contact" className="relative px-4 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
+              Get in Touch
+            </p>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+              <span className="text-balance">Ready to Make It?</span>
+            </h2>
+            <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
+              Whether you have a campaign in mind or you{"'"}re exploring what AI
+              can do for your brand, we{"'"}d love to hear from you.
+            </p>
+            <div className="mt-8 flex flex-col gap-4">
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <Mail size={18} />
+                </div>
+                <span className="text-sm">hello@makit.studio</span>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+                  <ArrowRight size={18} />
+                </div>
+                <span className="text-sm">Book a 15-min strategy call</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-xl border border-foreground/5 bg-card/50 p-6 backdrop-blur-sm md:p-8">
+            {submitted ? (
+              <div className="flex h-full flex-col items-center justify-center py-12 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-accent">
+                  <Send size={24} />
+                </div>
+                <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
+                  Message Sent
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  We{"'"}ll get back to you within 24 hours.
+                </p>
+              </div>
+            ) : (
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  setSubmitted(true)
+                }}
+                className="flex flex-col gap-5"
+              >
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="firstName" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      First Name
+                    </label>
+                    <Input
+                      id="firstName"
+                      placeholder="Jane"
+                      required
+                      className="rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <label htmlFor="lastName" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      Last Name
+                    </label>
+                    <Input
+                      id="lastName"
+                      placeholder="Doe"
+                      required
+                      className="rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="email" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    placeholder="jane@brand.com"
+                    required
+                    className="rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="company" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    Brand / Company
+                  </label>
+                  <Input
+                    id="company"
+                    placeholder="Your brand name"
+                    className="rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="message" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                    Message
+                  </label>
+                  <Textarea
+                    id="message"
+                    placeholder="Tell us about your project..."
+                    rows={4}
+                    required
+                    className="resize-none rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="mt-2 rounded-full bg-gradient-to-r from-accent to-[hsl(260,70%,55%)] text-accent-foreground hover:opacity-90"
+                >
+                  Send Message
+                  <Send size={16} />
+                </Button>
+              </form>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
