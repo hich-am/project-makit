@@ -1,4 +1,5 @@
 import { Navbar } from "@/components/navbar"
+import { EclipseGlow } from "@/components/EclipseGlow"
 import { Hero } from "@/components/hero"
 import { BrandMarquee } from "@/components/brand-marquee"
 import { Portfolio } from "@/components/portfolio"
@@ -11,14 +12,15 @@ import { Footer } from "@/components/footer"
 
 export default function Page() {
   return (
-    <main className="relative min-h-screen">
+    <main className="relative min-h-screen bg-[#010101]">
       <Navbar />
+      {/* Eclipse atmospheric glow - positioned behind hero content */}
       <Hero />
       <BrandMarquee />
       <Portfolio />
+      <Services />
       <About />
       <Features />
-      <Services />
       <CTA />
       <Contact />
       <Footer />

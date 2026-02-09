@@ -22,12 +22,13 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           <div>
             <Image
-              src="/images/makit-logo.png"
-              alt="makit logo"
-              width={100}
-              height={32}
-              className="h-8 w-auto"
-              style={{ width: "auto" }}
+              src="logonobg.png"
+            alt="makit logo"
+            width={240}
+            height={80}
+            className="max-h-8"
+            style={{ width: "auto", height: "auto" }}
+            priority
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
               Your kit to make it. Hyper-realistic AI campaigns for the fashion

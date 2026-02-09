@@ -51,13 +51,15 @@ export function Services() {
     <section id="services" className="relative px-4 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 text-center">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
+          {/* Label - Solid eclipse green */}
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-eclipse-glow">
             What We Do
           </p>
-          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+          {/* Title - Solid white, no gradient */}
+          <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-white md:text-5xl">
             <span className="text-balance">Services & Offerings</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+          <p className="mx-auto mt-4 max-w-xl text-zinc-400">
             End-to-end AI-powered creative production for fashion brands ready to
             lead the future.
           </p>
@@ -67,15 +69,23 @@ export function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="group rounded-xl border border-foreground/5 bg-card/50 p-6 backdrop-blur-sm transition-all hover:border-accent/20 hover:bg-card"
+              className="group relative rounded-xl border border-white/[0.08] bg-white/[0.03] p-6 backdrop-blur-xl transition-all hover:border-eclipse-glow/20 hover:bg-white/[0.05]"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent/10 text-accent transition-colors group-hover:bg-accent/20">
+              {/* Top border highlight for glass edge effect */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-t-xl" />
+
+              {/* Icon container */}
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-eclipse-deep/30 text-eclipse-glow transition-colors group-hover:bg-eclipse-deep/50">
                 <service.icon size={24} />
               </div>
-              <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
+
+              {/* Title - Solid white */}
+              <h3 className="mt-4 font-display text-lg font-semibold text-white">
                 {service.title}
               </h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+
+              {/* Description - Zinc grey */}
+              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                 {service.description}
               </p>
             </div>

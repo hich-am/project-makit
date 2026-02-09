@@ -1,11 +1,15 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Manrope, Space_Grotesk } from 'next/font/google';
+import { Inter } from 'next/font/google'
+import { I18nProvider } from '@/lib/i18n/i18n'
 
-import './globals.css';
+import './globals.css'
 
-const _manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
-const _spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' });
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'makit - Your Kit to Make It',
@@ -13,7 +17,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#050505',
+  themeColor: '#010101',
 }
 
 export default function RootLayout({
@@ -22,8 +26,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${_manrope.variable} ${_spaceGrotesk.variable} font-sans antialiased`}>{children}</body>
+    <html lang="en" dir="ltr" className="dark">
+      <body className={`${inter.variable} font-sans antialiased bg-[#010101]`}>
+        <I18nProvider>
+          {children}
+        </I18nProvider>
+      </body>
     </html>
   )
 }
+

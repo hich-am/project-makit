@@ -10,30 +10,29 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 6%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 6%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 0 0% 95%;
-    --primary-foreground: 0 0% 2%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
-    --accent: 292 84% 61%;
+    /* Ultra-Noir Monochrome Palette */
+    --background: 0 0% 0%;
+    /* Pure Black #000000 */
+    --foreground: 0 0% 100%;
+    /* Pure White #FFFFFF */
+    --card: 0 0% 3%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 3%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 80%;
+    /* Zinc-400 equivalent much lighter for black bg */
+    --accent: 0 0% 15%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 16%;
-    --input: 0 0% 16%;
-    --ring: 292 84% 61%;
-    --chart-1: 292 84% 61%;
-    --chart-2: 260 70% 55%;
-    --chart-3: 230 70% 55%;
-    --chart-4: 320 80% 60%;
-    --chart-5: 250 60% 50%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 0 0% 100%;
     --radius: 0.75rem;
   }
 }
@@ -42,6 +41,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -51,10 +51,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* ===== Monochrome Glass Utilities ===== */
+.glass-panel {
+  @apply bg-white/[0.03] backdrop-blur-md border border-white/10;
+}
+
+.glass-panel-hover {
+  @apply glass-panel hover:bg-white/[0.06] transition-colors;
+}
+
+/* ===== Animations ===== */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -65,9 +76,12 @@ html {
 }
 
 @keyframes float {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-10px);
   }
@@ -77,10 +91,33 @@ html {
   animation: float 6s ease-in-out infinite;
 }
 
+/* Eclipse Pulse - Slow 10s cycle for moonlight glow effect */
+@keyframes eclipse-pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+.animate-eclipse-pulse {
+  animation: eclipse-pulse 10s ease-in-out infinite;
+}
+
+/* Fast glow pulse for indicators */
 @keyframes glow-pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.4;
   }
+
   50% {
     opacity: 1;
   }
