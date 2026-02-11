@@ -17,7 +17,7 @@ export function Footer() {
       { label: "Instagram", href: "#" },
       { label: "LinkedIn", href: "#" },
       { label: "X / Twitter", href: "#" },
-      { label: "Behance", href: "#" },
+      { label: "Behance", href: "https://www.behance.net/makitads", target: "_blank", rel: "noopener noreferrer" },
     ],
   }
 

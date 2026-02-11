@@ -10,6 +10,7 @@ import { Contact } from "@/components/contact"
 import { CTA } from "@/components/cta"
 import { Footer } from "@/components/footer"
 
+
 export default function Page() {
   return (
     <main className="relative min-h-screen bg-[#010101]">
@@ -22,7 +23,7 @@ export default function Page() {
       <About />
       <Features />
       <CTA />
-      <Contact />
+      {/*<Contact />*/}
       <Footer />
     </main>
   )

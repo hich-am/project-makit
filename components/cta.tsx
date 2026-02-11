@@ -1,10 +1,12 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { MessageCircle } from "lucide-react"
 import { motion } from "framer-motion"
 import { useTranslation } from "@/lib/i18n/i18n"
 import { useScrollReveal } from "@/hooks/useScrollReveal"
+
+const WHATSAPP_URL = "https://wa.me/message/YOUR_WHATSAPP_BUSINESS_ID"
 
 export function CTA() {
   const { t } = useTranslation()
@@ -27,11 +29,13 @@ export function CTA() {
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-br from-[#E2E2E2] via-[#F5F5F7] to-[#999999] px-10 text-lg text-black font-medium shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:scale-[1.02] active:scale-[0.98]"
+            className="group relative overflow-hidden rounded-full bg-gradient-to-br from-[#E2E2E2] via-[#F5F5F7] to-[#999999] px-10 text-lg text-black font-medium shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] transition-all hover:shadow-[0_6px_20px_rgba(255,255,255,0.15)] hover:scale-[1.02] active:scale-[0.98]"
             asChild
           >
             <motion.a
-              href="#contact"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -41,8 +45,8 @@ export function CTA() {
                 animate={{ translateX: ["-100%", "200%"] }}
               />
               <span className="relative flex items-center gap-2">
+                <MessageCircle size={20} />
                 {t('cta.bookCallLong')}
-                <ArrowRight size={18} />
               </span>
             </motion.a>
           </Button>
