@@ -5,9 +5,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Send, Mail, ArrowRight } from "lucide-react"
+import { useTranslation } from "@/lib/i18n/i18n"
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
+  const { t } = useTranslation()
 
   return (
     <section id="contact" className="relative px-4 py-24 md:py-32">
@@ -15,14 +17,13 @@ export function Contact() {
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
-              Get in Touch
+              {t('contact.label')}
             </p>
             <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-              <span className="text-balance">Ready to Make It?</span>
+              <span className="text-balance">{t('contact.title')}</span>
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-              Whether you have a campaign in mind or you{"'"}re exploring what AI
-              can do for your brand, we{"'"}d love to hear from you.
+              {t('contact.description')}
             </p>
             <div className="mt-8 flex flex-col gap-4">
               <div className="flex items-center gap-3 text-muted-foreground">
@@ -35,7 +36,7 @@ export function Contact() {
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
                   <ArrowRight size={18} />
                 </div>
-                <span className="text-sm">Book a 15-min strategy call</span>
+                <span className="text-sm">{t('contact.bookCall')}</span>
               </div>
             </div>
           </div>
@@ -47,10 +48,10 @@ export function Contact() {
                   <Send size={24} />
                 </div>
                 <h3 className="mt-4 font-display text-xl font-semibold text-foreground">
-                  Message Sent
+                  {t('contact.sent.title')}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  We{"'"}ll get back to you within 24 hours.
+                  {t('contact.sent.description')}
                 </p>
               </div>
             ) : (
@@ -64,22 +65,22 @@ export function Contact() {
                 <div className="grid gap-5 sm:grid-cols-2">
                   <div className="flex flex-col gap-2">
                     <label htmlFor="firstName" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                      First Name
+                      {t('contact.firstName')}
                     </label>
                     <Input
                       id="firstName"
-                      placeholder="Jane"
+                      placeholder={t('contact.placeholder.firstName')}
                       required
                       className="rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
                     />
                   </div>
                   <div className="flex flex-col gap-2">
                     <label htmlFor="lastName" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                      Last Name
+                      {t('contact.lastName')}
                     </label>
                     <Input
                       id="lastName"
-                      placeholder="Doe"
+                      placeholder={t('contact.placeholder.lastName')}
                       required
                       className="rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
                     />
@@ -87,33 +88,33 @@ export function Contact() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="email" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Email
+                    {t('contact.email')}
                   </label>
                   <Input
                     id="email"
                     type="email"
-                    placeholder="jane@brand.com"
+                    placeholder={t('contact.placeholder.email')}
                     required
                     className="rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="company" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Brand / Company
+                    {t('contact.company')}
                   </label>
                   <Input
                     id="company"
-                    placeholder="Your brand name"
+                    placeholder={t('contact.placeholder.company')}
                     className="rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="message" className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    Message
+                    {t('contact.message')}
                   </label>
                   <Textarea
                     id="message"
-                    placeholder="Tell us about your project..."
+                    placeholder={t('contact.placeholder.message')}
                     rows={4}
                     required
                     className="resize-none rounded-lg border-foreground/10 bg-background/50 text-foreground placeholder:text-muted-foreground/40"
@@ -122,9 +123,9 @@ export function Contact() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="mt-2 rounded-full bg-gradient-to-r from-accent to-[hsl(260,70%,55%)] text-accent-foreground hover:opacity-90"
+                  className="mt-2 rounded-full bg-gradient-to-tr from-[#949494] via-[#F5F5F7] to-[#A1A1AA] text-black font-medium shadow-[inset_0_1px_1px_rgba(255,255,255,0.6)] transition-all hover:brightness-110 hover:shadow-[0_0_15px_rgba(255,255,255,0.2)]"
                 >
-                  Send Message
+                  {t('contact.send')}
                   <Send size={16} />
                 </Button>
               </form>

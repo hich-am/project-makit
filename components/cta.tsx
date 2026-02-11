@@ -3,8 +3,11 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
+import { useTranslation } from "@/lib/i18n/i18n"
 
 export function CTA() {
+  const { t } = useTranslation()
+
   return (
     <section className="relative overflow-hidden px-4 py-24 md:py-32">
       {/* Background glow */}
@@ -14,16 +17,15 @@ export function CTA() {
 
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         <h2 className="font-display text-4xl font-bold tracking-tight text-foreground md:text-6xl">
-          <span className="text-balance">Ready to Make It?</span>
+          <span className="text-balance">{t('cta.title')}</span>
         </h2>
         <p className="mx-auto mt-6 max-w-lg text-lg text-muted-foreground">
-          Let{"'"}s create something impossible together. Book a strategy call
-          and see what AI can do for your brand.
+          {t('cta.description')}
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-r from-accent to-[hsl(260,70%,55%)] px-10 text-lg text-accent-foreground hover:opacity-90"
+            className="group relative overflow-hidden rounded-full bg-gradient-to-br from-[#E2E2E2] via-[#F5F5F7] to-[#999999] px-10 text-lg text-black font-medium shadow-[0_4px_14px_0_rgba(0,0,0,0.1)] transition-all hover:shadow-[0_6px_20px_rgba(0,0,0,0.15)] hover:scale-[1.02] active:scale-[0.98]"
             asChild
           >
             <motion.a
@@ -37,14 +39,14 @@ export function CTA() {
                 animate={{ translateX: ["-100%", "200%"] }}
               />
               <span className="relative flex items-center gap-2">
-                Book a 15-min Strategy Call
+                {t('cta.bookCallLong')}
                 <ArrowRight size={18} />
               </span>
             </motion.a>
           </Button>
         </div>
         <p className="mt-6 text-xs uppercase tracking-[0.3em] text-muted-foreground/40">
-          your kit to make it
+          {t('cta.tagline')}
         </p>
       </div>
     </section>

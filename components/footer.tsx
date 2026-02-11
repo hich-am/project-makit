@@ -1,21 +1,26 @@
-import Image from "next/image"
+"use client"
 
-const footerLinks = {
-  Studio: [
-    { label: "Work", href: "#work" },
-    { label: "Services", href: "#services" },
-    { label: "About", href: "#about" },
-    { label: "Contact", href: "#contact" },
-  ],
-  Connect: [
-    { label: "Instagram", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "X / Twitter", href: "#" },
-    { label: "Behance", href: "#" },
-  ],
-}
+import Image from "next/image"
+import { useTranslation } from "@/lib/i18n/i18n"
 
 export function Footer() {
+  const { t } = useTranslation()
+
+  const footerLinks = {
+    [t('footer.studio')]: [
+      { label: t('footer.work'), href: "#work" },
+      { label: t('footer.services'), href: "#services" },
+      { label: t('footer.about'), href: "#about" },
+      { label: t('footer.contact'), href: "#contact" },
+    ],
+    [t('footer.connect')]: [
+      { label: "Instagram", href: "#" },
+      { label: "LinkedIn", href: "#" },
+      { label: "X / Twitter", href: "#" },
+      { label: "Behance", href: "#" },
+    ],
+  }
+
   return (
     <footer className="border-t border-foreground/5 px-4 py-16">
       <div className="mx-auto max-w-6xl">
@@ -23,16 +28,15 @@ export function Footer() {
           <div>
             <Image
               src="logonobg.png"
-            alt="makit logo"
-            width={240}
-            height={80}
-            className="max-h-8"
-            style={{ width: "auto", height: "auto" }}
-            priority
+              alt="makit logo"
+              width={240}
+              height={80}
+              className="max-h-8"
+              style={{ width: "auto", height: "auto" }}
+              priority
             />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-              Your kit to make it. Hyper-realistic AI campaigns for the fashion
-              brands of tomorrow.
+              {t('footer.tagline')}
             </p>
           </div>
 
@@ -59,10 +63,10 @@ export function Footer() {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-foreground/5 pt-8 md:flex-row">
           <p className="text-xs text-muted-foreground/40">
-            {new Date().getFullYear()} makit. All rights reserved.
+            {new Date().getFullYear()} makit. {t('footer.rights')}.
           </p>
           <p className="text-xs text-muted-foreground/40">
-            Crafted with AI. Made for the future.
+            {t('footer.crafted')}
           </p>
         </div>
       </div>

@@ -176,7 +176,7 @@ export function Hero() {
           {/* Primary button - Solid White, Black Text */}
           <Button
             size="lg"
-            className="group relative overflow-hidden rounded-full bg-white px-8 text-black font-semibold hover:bg-zinc-100"
+            className="group relative overflow-hidden rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#E4E4E7] to-[#A1A1AA] px-8 text-black font-semibold shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
             asChild
           >
             <motion.a

@@ -3,56 +3,57 @@
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { motion } from "framer-motion"
+import { useTranslation } from "@/lib/i18n/i18n"
 
 interface PortfolioItem {
   title: string
-  category: string
+  categoryKey: string
   image: string
-  tags: string[]
+  tagKeys: string[]
   span: string
 }
 
 const projects: PortfolioItem[] = [
   {
     title: "Ethereal Couture",
-    category: "AI Editorial",
+    categoryKey: "portfolio.category.aiEditorial",
     image: "/logonobg.png",
-    tags: ["Kling AI", "Virtual Model"],
+    tagKeys: ["Kling AI", "portfolio.tag.virtualModel"],
     span: "md:col-span-2 md:row-span-2",
   },
   {
     title: "Golden Hour Collection",
-    category: "Campaign",
+    categoryKey: "portfolio.category.campaign",
     image: "/placeholder.svg",
-    tags: ["Weavy", "Photoshoot"],
+    tagKeys: ["Weavy", "Photoshoot"],
     span: "md:col-span-1",
   },
   {
     title: "Deep Dive Series",
-    category: "Editorial",
+    categoryKey: "portfolio.category.editorial",
     image: "/placeholder.svg",
-    tags: ["Higgfield", "Impossible Location"],
+    tagKeys: ["Higgfield", "portfolio.tag.impossibleLocation"],
     span: "md:col-span-1",
   },
   {
     title: "Neon Streets",
-    category: "Campaign",
+    categoryKey: "portfolio.category.campaign",
     image: "/placeholder.svg",
-    tags: ["Kling AI", "Virtual Set"],
+    tagKeys: ["Kling AI", "portfolio.tag.virtualSet"],
     span: "md:col-span-1",
   },
   {
     title: "Desert Mirage",
-    category: "Editorial",
+    categoryKey: "portfolio.category.editorial",
     image: "/placeholder.svg",
-    tags: ["Weavy", "AI Campaign"],
+    tagKeys: ["Weavy", "portfolio.tag.aiCampaign"],
     span: "md:col-span-1",
   },
   {
     title: "Zero Gravity",
-    category: "Concept",
+    categoryKey: "portfolio.category.concept",
     image: "/placeholder.svg",
-    tags: ["Higgfield", "Impossible Location"],
+    tagKeys: ["Higgfield", "portfolio.tag.impossibleLocation"],
     span: "md:col-span-2",
   },
 ]
@@ -77,6 +78,14 @@ const itemVariants = {
 }
 
 export function Portfolio() {
+  const { t } = useTranslation()
+
+  // Helper: if the key exists in translations, use t(), otherwise return as-is (for tool names like "Kling AI")
+  const resolveTag = (key: string): string => {
+    const translated = t(key)
+    return translated !== key ? translated : key
+  }
+
   return (
     <section id="work" className="relative px-4 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
@@ -88,14 +97,13 @@ export function Portfolio() {
           className="mb-12 text-center"
         >
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">
-            Selected Work
+            {t('portfolio.label')}
           </p>
           <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-foreground md:text-5xl">
-            <span className="text-balance">The Impossible Gallery</span>
+            <span className="text-balance">{t('portfolio.title')}</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            AI-powered campaigns and editorials crafted for forward-thinking
-            fashion brands.
+            {t('portfolio.description')}
           </p>
         </motion.div>
 
@@ -124,19 +132,19 @@ export function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 <div className="absolute inset-x-0 bottom-0 translate-y-4 p-5 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   <p className="text-xs font-medium uppercase tracking-wider text-accent">
-                    {project.category}
+                    {t(project.categoryKey)}
                   </p>
                   <h3 className="mt-1 font-display text-lg font-semibold text-foreground">
                     {project.title}
                   </h3>
                   <div className="mt-2 flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
+                    {project.tagKeys.map((tagKey) => (
                       <Badge
-                        key={tag}
+                        key={tagKey}
                         variant="outline"
                         className="rounded-full border-foreground/10 bg-foreground/5 text-xs text-muted-foreground backdrop-blur-sm"
                       >
-                        {tag}
+                        {resolveTag(tagKey)}
                       </Badge>
                     ))}
                   </div>

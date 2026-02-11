@@ -65,7 +65,7 @@ export function Navbar() {
           {/* CTA - Solid White button, Black text */}
           <Button
             size="sm"
-            className="rounded-full bg-white text-black font-semibold hover:bg-zinc-100"
+            className="rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#F8F8F8] to-[#D4D4D8] text-black font-semibold shadow-[0_2px_10px_rgba(0,0,0,0.05)] transition-all duration-300 hover:to-[#E4E4E7] hover:shadow-[0_4px_15px_rgba(0,0,0,0.1)] hover:scale-[1.03]"
             asChild
           >
             <motion.a
