@@ -4,9 +4,11 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 import { useTranslation } from "@/lib/i18n/i18n"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export function CTA() {
   const { t } = useTranslation()
+  const { ref, isVisible } = useScrollReveal()
 
   return (
     <section className="relative overflow-hidden px-4 py-24 md:py-32">
@@ -15,7 +17,7 @@ export function CTA() {
         <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-3xl text-center">
+      <div ref={ref} className={`relative z-10 mx-auto max-w-3xl text-center scroll-reveal ${isVisible ? 'is-visible' : ''}`}>
         <h2 className="font-display text-4xl font-bold tracking-tight text-foreground md:text-6xl">
           <span className="text-balance">{t('cta.title')}</span>
         </h2>

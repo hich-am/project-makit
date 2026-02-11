@@ -6,14 +6,16 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Send, Mail, ArrowRight } from "lucide-react"
 import { useTranslation } from "@/lib/i18n/i18n"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const { t } = useTranslation()
+  const { ref, isVisible } = useScrollReveal()
 
   return (
     <section id="contact" className="relative px-4 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div ref={ref} className={`mx-auto max-w-6xl scroll-reveal ${isVisible ? 'is-visible' : ''}`}>
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-accent">

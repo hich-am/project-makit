@@ -3,6 +3,7 @@
 import React from "react"
 import { Camera, Layers, Zap, Play, Globe, Palette } from "lucide-react"
 import { useTranslation } from "@/lib/i18n/i18n"
+import { useScrollReveal } from "@/hooks/useScrollReveal"
 
 interface ServiceDef {
   icon: React.ElementType
@@ -45,10 +46,11 @@ const serviceDefs: ServiceDef[] = [
 
 export function Services() {
   const { t } = useTranslation()
+  const { ref, isVisible } = useScrollReveal()
 
   return (
     <section id="services" className="relative px-4 py-24 md:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div ref={ref} className={`mx-auto max-w-6xl scroll-reveal ${isVisible ? 'is-visible' : ''}`}>
         <div className="mb-16 text-center">
           {/* Label - Solid eclipse green */}
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-eclipse-glow">
