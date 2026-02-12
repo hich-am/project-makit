@@ -13,7 +13,7 @@ export function CTA() {
   const { ref, isVisible } = useScrollReveal()
 
   return (
-    <section className="relative overflow-hidden px-4 py-24 md:py-32">
+    <section id="cta" className="relative overflow-hidden px-4 py-24 md:py-32">
       {/* Background glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/5 blur-3xl" />

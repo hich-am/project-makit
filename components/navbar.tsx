@@ -21,7 +21,7 @@ export function Navbar() {
     { label: t('nav.work'), href: "#work" },
     { label: t('nav.services'), href: "#services" },
     { label: t('nav.about'), href: "#about" },
-    { label: t('nav.contact'), href: "#contact" },
+    { label: t('nav.contact'), href: "#cta" },
   ]
 
   return (
@@ -69,7 +69,7 @@ export function Navbar() {
             asChild
           >
             <motion.a
-              href="#contact"
+              href="#cta"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -120,7 +120,7 @@ export function Navbar() {
             className="mt-2 rounded-full bg-white text-black font-semibold"
             asChild
           >
-            <a href="#contact" onClick={() => setMobileOpen(false)}>{t('nav.startProject')}</a>
+            <a href="#cta" onClick={() => setMobileOpen(false)}>{t('nav.startProject')}</a>
           </Button>
         </motion.div>
       )}

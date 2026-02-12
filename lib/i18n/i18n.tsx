@@ -38,7 +38,7 @@ const translations: Record<Locale, Record<string, string>> = {
         'hero.headline': 'Reimagining Digital Fashion',
         'hero.description': 'We turn clothing concepts into hyper-realistic AI campaigns. Impossible shoots made possible.',
         'hero.tagline': 'your kit to make it',
-        'cta.bookCall': 'WhatsApp Business',
+        'cta.bookCall': 'Contact Us',
         'cta.bookCallLong': 'Contact Us on WhatsApp Business',
         'cta.viewWork': 'View Work',
         'hero.viewWork': 'View Our Work',
@@ -86,6 +86,26 @@ const translations: Record<Locale, Record<string, string>> = {
         'portfolio.tag.impossibleLocation': 'Impossible Location',
         'portfolio.tag.virtualSet': 'Virtual Set',
         'portfolio.tag.aiCampaign': 'AI Campaign',
+        'portfolio.filter.products': 'Products',
+        'portfolio.filter.models': 'Models',
+        'portfolio.filter.videos': 'Videos',
+        'portfolio.tag.product': 'Product',
+        'portfolio.tag.accessory': 'Accessory',
+        'portfolio.tag.footwear': 'Footwear',
+        'portfolio.tag.apparel': 'Apparel',
+        'portfolio.tag.fragrance': 'Fragrance',
+        'portfolio.tag.leather': 'Leather Goods',
+        'portfolio.tag.aiGenerated': 'AI Generated',
+        'portfolio.tag.editorial': 'Editorial',
+        'portfolio.tag.lookbook': 'Lookbook',
+        'portfolio.tag.campaign': 'Campaign',
+        'portfolio.tag.streetwear': 'Streetwear',
+        'portfolio.tag.couture': 'Couture',
+        'portfolio.tag.avantGarde': 'Avant-Garde',
+        'portfolio.tag.runway': 'Runway',
+        'portfolio.tag.brandFilm': 'Brand Film',
+        'portfolio.tag.bts': 'Behind the Scenes',
+        'portfolio.tag.aiVideo': 'AI Video',
 
         // About
         'about.label': 'About makit',
@@ -136,6 +156,9 @@ const translations: Record<Locale, Record<string, string>> = {
 
         // Brand Marquee
         'marquee.poweredBy': "Powered by the world's most advanced models",
+
+        // Common
+        'common.close': 'Close',
     },
     fr: {
         // Navbar
@@ -152,7 +175,7 @@ const translations: Record<Locale, Record<string, string>> = {
         'hero.headline': 'Réinventer la mode digitale',
         'hero.description': 'Nous transformons vos concepts vestimentaires en campagnes IA hyperréalistes. Des shootings impossibles rendus possibles.',
         'hero.tagline': 'votre kit pour réussir',
-        'cta.bookCall': 'WhatsApp Business',
+        'cta.bookCall': 'Contactez-nous',
         'cta.bookCallLong': 'Contactez-nous sur WhatsApp Business',
         'cta.viewWork': 'Voir nos Projets',
         'hero.viewWork': 'Voir nos projets',
@@ -200,6 +223,26 @@ const translations: Record<Locale, Record<string, string>> = {
         'portfolio.tag.impossibleLocation': 'Lieu Imaginaire',
         'portfolio.tag.virtualSet': 'Décor Virtuel',
         'portfolio.tag.aiCampaign': 'Campagne IA',
+        'portfolio.filter.products': 'Produits',
+        'portfolio.filter.models': 'Mannequins',
+        'portfolio.filter.videos': 'Vidéos',
+        'portfolio.tag.product': 'Produit',
+        'portfolio.tag.accessory': 'Accessoire',
+        'portfolio.tag.footwear': 'Chaussures',
+        'portfolio.tag.apparel': 'Vêtement',
+        'portfolio.tag.fragrance': 'Parfum',
+        'portfolio.tag.leather': 'Maroquinerie',
+        'portfolio.tag.aiGenerated': 'Généré par IA',
+        'portfolio.tag.editorial': 'Éditorial',
+        'portfolio.tag.lookbook': 'Lookbook',
+        'portfolio.tag.campaign': 'Campagne',
+        'portfolio.tag.streetwear': 'Streetwear',
+        'portfolio.tag.couture': 'Couture',
+        'portfolio.tag.avantGarde': 'Avant-Garde',
+        'portfolio.tag.runway': 'Défilé',
+        'portfolio.tag.brandFilm': 'Film de Marque',
+        'portfolio.tag.bts': 'Coulisses',
+        'portfolio.tag.aiVideo': 'Vidéo IA',
 
         // About
         'about.label': 'À propos de makit',
@@ -250,6 +293,9 @@ const translations: Record<Locale, Record<string, string>> = {
 
         // Brand Marquee
         'marquee.poweredBy': 'Propulsé par les modèles les plus avancés au monde',
+
+        // Common
+        'common.close': 'Fermer',
     },
     ar: {
         // Navbar
@@ -314,6 +360,26 @@ const translations: Record<Locale, Record<string, string>> = {
         'portfolio.tag.impossibleLocation': 'موقع خيالي',
         'portfolio.tag.virtualSet': 'ديكور افتراضي',
         'portfolio.tag.aiCampaign': 'حملة ذكاء اصطناعي',
+        'portfolio.filter.products': 'المنتجات',
+        'portfolio.filter.models': 'العارضون',
+        'portfolio.filter.videos': 'الفيديوهات',
+        'portfolio.tag.product': 'منتج',
+        'portfolio.tag.accessory': 'إكسسوار',
+        'portfolio.tag.footwear': 'أحذية',
+        'portfolio.tag.apparel': 'ملابس',
+        'portfolio.tag.fragrance': 'عطر',
+        'portfolio.tag.leather': 'منتجات جلدية',
+        'portfolio.tag.aiGenerated': 'مُنشأ بالذكاء الاصطناعي',
+        'portfolio.tag.editorial': 'تحريري',
+        'portfolio.tag.lookbook': 'كتالوج',
+        'portfolio.tag.campaign': 'حملة',
+        'portfolio.tag.streetwear': 'أزياء شارع',
+        'portfolio.tag.couture': 'أزياء راقية',
+        'portfolio.tag.avantGarde': 'طليعي',
+        'portfolio.tag.runway': 'عرض أزياء',
+        'portfolio.tag.brandFilm': 'فيلم علامة تجارية',
+        'portfolio.tag.bts': 'كواليس',
+        'portfolio.tag.aiVideo': 'فيديو بالذكاء الاصطناعي',
 
         // About
         'about.label': 'عن ماكيت',
@@ -364,6 +430,9 @@ const translations: Record<Locale, Record<string, string>> = {
 
         // Brand Marquee
         'marquee.poweredBy': 'مدعوم بأكثر النماذج تقدماً في العالم',
+
+        // Common
+        'common.close': 'إغلاق',
     },
 }
 

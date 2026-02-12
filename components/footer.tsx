@@ -14,7 +14,7 @@ export function Footer() {
       { label: t('footer.contact'), href: "#contact" },
     ],
     [t('footer.connect')]: [
-      { label: "Instagram", href: "#" },
+      { label: "Instagram", href: "https://www.instagram.com/makit.ads/" },
       { label: "LinkedIn", href: "#" },
       { label: "X / Twitter", href: "#" },
       { label: "Behance", href: "https://www.behance.net/makitads", target: "_blank", rel: "noopener noreferrer" },
