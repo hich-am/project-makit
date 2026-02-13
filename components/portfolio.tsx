@@ -42,7 +42,7 @@ const models: PortfolioItem[] = [
 ]
 
 const videos: VideoItem[] = [
-  { title: "Runway Campaign Film", poster: "/portfolio/videos/video-1.svg", tagKeys: ["portfolio.tag.runway", "portfolio.tag.aiVideo"] },
+  { title: "Runway Campaign Film", poster: "/portfolio/videos/video.mp4", tagKeys: ["portfolio.tag.runway", "portfolio.tag.aiVideo"] },
   { title: "Brand Story", poster: "/portfolio/videos/video-2.svg", tagKeys: ["portfolio.tag.brandFilm", "portfolio.tag.aiVideo"] },
   { title: "Behind the Scenes", poster: "/portfolio/videos/video-3.svg", tagKeys: ["portfolio.tag.bts", "portfolio.tag.aiVideo"] },
 ]
@@ -110,8 +110,8 @@ export function Portfolio() {
         </motion.div>
 
         {/* ─── Filter Toggle ───────────────────────────────────────── */}
-        <div className="mb-10 flex justify-center">
-          <div className="inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1 backdrop-blur-md">
+        <div className="mb-10 flex justify-center overflow-x-auto">
+          <div className="inline-flex flex-nowrap items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1 backdrop-blur-md">
             {tabs.map((tab) => (
               <button
                 key={tab.key}
@@ -154,7 +154,7 @@ export function Portfolio() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 p-4 backdrop-blur-xl md:p-10"
+              className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 p-4 backdrop-blur-xl md:p-10 overflow-y-auto"
               onClick={() => setSelectedItem(null)}
             >
               <motion.div
@@ -162,7 +162,7 @@ export function Portfolio() {
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.9, opacity: 0, y: 20 }}
                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                className="relative max-h-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] shadow-2xl"
+                className="relative max-h-[90vh] max-w-5xl overflow-hidden overflow-y-auto rounded-2xl border border-white/10 bg-white/[0.02] shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Close Button */}
@@ -175,7 +175,7 @@ export function Portfolio() {
 
                 <div className="flex flex-col md:flex-row">
                   {/* Image/Video Container */}
-                  <div className="relative aspect-square w-full bg-zinc-900 md:aspect-auto md:h-[70vh] md:w-[60%]">
+                  <div className="relative aspect-square max-h-[50vh] w-full bg-zinc-900 md:max-h-none md:aspect-auto md:h-[70vh] md:w-[60%]">
                     <Image
                       src={'image' in selectedItem ? selectedItem.image : selectedItem.poster}
                       alt={selectedItem.title}
@@ -246,13 +246,13 @@ function PortfolioGrid({
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 md:auto-rows-[280px]"
+      className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:auto-rows-[280px]"
     >
       {items.map((item) => (
         <motion.div
           key={item.title}
           variants={itemVariants}
-          className={`group relative cursor-zoom-in overflow-hidden rounded-xl border border-foreground/5 bg-card ${item.span ?? ""}`}
+          className={`group relative min-h-[250px] cursor-zoom-in overflow-hidden rounded-xl border border-foreground/5 bg-card ${item.span ?? ""}`}
           onClick={() => onItemClick(item)}
           whileHover={{ y: -5 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}

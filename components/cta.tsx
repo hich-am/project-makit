@@ -20,7 +20,7 @@ export function CTA() {
       </div>
 
       <div ref={ref} className={`relative z-10 mx-auto max-w-3xl text-center scroll-reveal ${isVisible ? 'is-visible' : ''}`}>
-        <h2 className="font-display text-4xl font-bold tracking-tight text-foreground md:text-6xl">
+        <h2 className="font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl md:text-6xl">
           <span className="text-balance">{t('cta.title')}</span>
         </h2>
         <p className="mx-auto mt-6 max-w-lg text-lg text-muted-foreground">
@@ -29,7 +29,7 @@ export function CTA() {
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
             size="lg"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-br from-[#E2E2E2] via-[#F5F5F7] to-[#999999] px-10 text-lg text-black font-medium shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] transition-all hover:shadow-[0_6px_20px_rgba(255,255,255,0.15)] hover:scale-[1.02] active:scale-[0.98]"
+            className="group relative w-full sm:w-auto max-w-full overflow-hidden rounded-full bg-gradient-to-br from-[#E2E2E2] via-[#F5F5F7] to-[#999999] px-6 sm:px-10 text-base sm:text-lg text-black font-medium shadow-[0_4px_14px_0_rgba(255,255,255,0.1)] transition-all hover:shadow-[0_6px_20px_rgba(255,255,255,0.15)] hover:scale-[1.02] active:scale-[0.98]"
             asChild
           >
             <motion.a

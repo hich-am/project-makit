@@ -99,7 +99,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
-          className="absolute -top-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 h-[800px] w-[1200px] rounded-full bg-gradient-radial from-white/10 via-white/5 to-transparent animate-eclipse-pulse"
+          className="absolute -top-1/2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 h-[400px] w-[600px] md:h-[800px] md:w-[1200px] rounded-full bg-gradient-radial from-white/10 via-white/5 to-transparent animate-eclipse-pulse"
           style={{
             background: "radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.03) 40%, transparent 70%)",
           }}
@@ -126,7 +126,7 @@ export function Hero() {
 
         {/* Two-Line Headline - MASSIVE, Solid White */}
         <motion.h1
-          className="font-display text-5xl font-bold tracking-tight text-white md:text-7xl lg:text-[80px]"
+          className="font-display text-3xl font-bold tracking-tight text-white sm:text-5xl md:text-7xl lg:text-[80px]"
           variants={headlineVariants}
         >
           {/* Line 1 - Added pb-2 and leading-tight to fix descender clipping */}
@@ -176,11 +176,11 @@ export function Hero() {
           {/* Primary button - Solid White, Black Text */}
           <Button
             size="lg"
-            className="group relative overflow-hidden rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#E4E4E7] to-[#A1A1AA] px-8 text-black font-semibold shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
+            className="group relative w-full sm:w-auto overflow-hidden rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#E4E4E7] to-[#A1A1AA] px-6 sm:px-8 text-black font-semibold shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(255,255,255,0.2)]"
             asChild
           >
             <motion.a
-              href="#contact"
+              href="#cta"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -195,7 +195,7 @@ export function Hero() {
           <Button
             size="lg"
             variant="outline"
-            className="rounded-full border-white/20 bg-transparent text-white hover:bg-white/[0.05] backdrop-blur-md"
+            className="w-full sm:w-auto rounded-full border-white/20 bg-transparent text-white hover:bg-white/[0.05] backdrop-blur-md"
             asChild
           >
             <motion.a
@@ -209,12 +209,12 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      {/* HLS Video - Bottom-aligned with mix-blend-screen */}
+      {/* HLS Video - Full background with mix-blend-screen */}
       <motion.div
         variants={videoVariants}
         initial="hidden"
         animate="visible"
-        className="absolute bottom-0 start-0 end-0 w-full overflow-hidden mb-[-150px] pointer-events-none"
+        className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
       >
         <video
           ref={videoRef}
@@ -222,7 +222,7 @@ export function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-auto mix-blend-screen grayscale opacity-80"
+          className="absolute inset-0 w-full h-full object-cover mix-blend-screen grayscale opacity-60 md:opacity-80"
           style={{ filter: "grayscale(100%)" }}
         />
       </motion.div>
