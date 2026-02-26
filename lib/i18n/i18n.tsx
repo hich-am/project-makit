@@ -154,6 +154,21 @@ const translations: Record<Locale, Record<string, string>> = {
         'footer.about': 'About',
         'footer.contact': 'Contact',
 
+        // Waitlist
+        'waitlist.join': 'Join the Waitlist',
+        'waitlist.title': 'Get Early Access',
+        'waitlist.description': 'Be the first to know when we launch. Sign up and we\'ll keep you in the loop.',
+        'waitlist.firstName': 'First Name',
+        'waitlist.lastName': 'Last Name',
+        'waitlist.email': 'Email',
+        'waitlist.placeholder.firstName': 'Jane',
+        'waitlist.placeholder.lastName': 'Doe',
+        'waitlist.placeholder.email': 'jane@brand.com',
+        'waitlist.submit': 'Join Now',
+        'waitlist.success': "You're on the list! We'll be in touch soon.",
+        'waitlist.error': 'Something went wrong. Please try again.',
+        'waitlist.duplicate': "You're already on the list!",
+
         // Brand Marquee
         'marquee.poweredBy': "Powered by the world's most advanced models",
 
@@ -291,6 +306,21 @@ const translations: Record<Locale, Record<string, string>> = {
         'footer.about': 'À propos',
         'footer.contact': 'Contact',
 
+        // Waitlist
+        'waitlist.join': 'Rejoindre la liste d\'attente',
+        'waitlist.title': 'Accès Anticipé',
+        'waitlist.description': 'Soyez les premiers informés de notre lancement. Inscrivez-vous et nous vous tiendrons au courant.',
+        'waitlist.firstName': 'Prénom',
+        'waitlist.lastName': 'Nom',
+        'waitlist.email': 'E-mail',
+        'waitlist.placeholder.firstName': 'Marie',
+        'waitlist.placeholder.lastName': 'Dupont',
+        'waitlist.placeholder.email': 'marie@marque.com',
+        'waitlist.submit': 'Rejoindre',
+        'waitlist.success': 'Vous êtes inscrit ! Nous vous contacterons bientôt.',
+        'waitlist.error': 'Une erreur est survenue. Veuillez réessayer.',
+        'waitlist.duplicate': 'Vous êtes déjà inscrit !',
+
         // Brand Marquee
         'marquee.poweredBy': 'Propulsé par les modèles les plus avancés au monde',
 
@@ -427,6 +457,21 @@ const translations: Record<Locale, Record<string, string>> = {
         'footer.services': 'الخدمات',
         'footer.about': 'من نحن',
         'footer.contact': 'اتصل بنا',
+
+        // Waitlist
+        'waitlist.join': 'انضم لقائمة الانتظار',
+        'waitlist.title': 'احصل على وصول مبكر',
+        'waitlist.description': 'كن أول من يعرف عند إطلاقنا. سجّل وسنبقيك على اطلاع.',
+        'waitlist.firstName': 'الاسم الأول',
+        'waitlist.lastName': 'اسم العائلة',
+        'waitlist.email': 'البريد الإلكتروني',
+        'waitlist.placeholder.firstName': 'أحمد',
+        'waitlist.placeholder.lastName': 'محمد',
+        'waitlist.placeholder.email': 'ahmed@brand.com',
+        'waitlist.submit': 'انضم الآن',
+        'waitlist.success': 'أنت في القائمة! سنتواصل معك قريباً.',
+        'waitlist.error': 'حدث خطأ. يرجى المحاولة مرة أخرى.',
+        'waitlist.duplicate': 'أنت مسجل بالفعل!',
 
         // Brand Marquee
         'marquee.poweredBy': 'مدعوم بأكثر النماذج تقدماً في العالم',
